@@ -1,6 +1,10 @@
-class RunwayHTTP {
-  constructor() {
+class GIARunwayHTTP {
+  constructor(_hostName = "localhost",var _port=8000) {
+	  this.port = _port;
+	  this.hostName = _hostName;
   }
+  let port ;
+  let hostName ;
 
   static getImageData(img) {
     let canvas = document.createElement("canvas");
@@ -13,9 +17,9 @@ class RunwayHTTP {
     return dataURL;
   }
 
-  static async query(port = 8000, data) {
+  static async query(hostname = "localhost",port = 8000, data) {
 
-    const url = `http://localhost:${port}/query`;
+    const url = `http://${hostname}:${port}/query`;
 
     try {
       const response = await fetch(url, {
@@ -34,22 +38,9 @@ class RunwayHTTP {
     }
   }
 
-  static async getData(port = 8000) {
+  static async getData(hostname= "localhost",port = 8000) {
 
-    const url = `http://localhost:${port}/data`;
-
-    try {
-      const response = await fetch(url);
-      return await response.json();
-
-    } catch(error) {
-      console.error(error);
-    }
-  }
-
-  static async getInfo(port = 8000) {
-
-    const url = `http://localhost:${port}/info`;
+    const url = `http://${hostname}:${port}/data`;
 
     try {
       const response = await fetch(url);
@@ -60,9 +51,22 @@ class RunwayHTTP {
     }
   }
 
-  static async getError(port = 8000) {
+  static async getInfo(hostname= "localhost",port = 8000) {
 
-    const url = `http://localhost:${port}/error`;
+    const url = `http://${hostname}:${port}/info`;
+
+    try {
+      const response = await fetch(url);
+      return await response.json();
+
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
+  static async getError(hostname= "localhost",port = 8000) {
+
+    const url = `http://${hostname}:${port}/error`;
 
     try {
       const response = await fetch(url);
@@ -75,4 +79,4 @@ class RunwayHTTP {
 
 }
 
-module.exports = RunwayHTTP;
+module.exports = GIARunwayHTTP;

@@ -1,24 +1,24 @@
 {
-  "name": "runwayml-http",
-  "version": "0.0.0",
-  "description": "RunwayML HTTP utilities",
+  "name": "gia-runwayml-http",
+  "version": "0.0.1",
+  "description": "GIA RunwayML HTTP utilities",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jpyepez/runwayml-http.git"
+    "url": "git+https://github.com/GuillaumeAI/gia-runwayml-http.git"
   },
   "keywords": [
     "runwayml",
     "http",
     "machinelearning"
   ],
-  "author": "JP Yepez",
+  "author": "JP Yepez, forked: J.Guillaume D.-Isabelle",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jpyepez/runwayml-http/issues"
+    "url": "https://github.com/GuillaumeAI/gia-runwayml-http/issues"
   },
-  "homepage": "https://github.com/jpyepez/runwayml-http#readme"
+  "homepage": "https://github.com/GuillaumeAI/gia-runwayml-http#readme"
 }
