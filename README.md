@@ -1,6 +1,6 @@
-# RunwayML HTTP
+# GIA RunwayML HTTP
 
-RunwayML HTTP (RunwayHTTP) is a utility package that provides quick
+GIA RunwayML HTTP (RunwayHTTP) is a utility package that provides quick
 and easy methods to post and request data from the
 [RunwayML](https://runwayml.com/) desktop app.
 
@@ -8,17 +8,17 @@ and easy methods to post and request data from the
 (Coming soon)
 
 ## Installation
-`npm i -S runwayml-http`
+`npm i -S gia-runwayml-http`
 
 ## Usage (Node.js + npm)
 
 Use the following syntax to add RunwayHTTP to the project:
 
 ```javascript
-const RunwayHTTP = require('runway-http');
+const GIARunwayHTTP = require('gia-runway-http');
 
 // OR alternative ES6 import syntax
-import RunwayHTTP from 'runwayml-http';
+import GIARunwayHTTP from 'gia-runwayml-http';
 ```
 
 In your selected RunwayML workspace, navigate to `Network` > `HTTP`
@@ -34,7 +34,7 @@ Send data to RunwayML:
 // Query server with port and data.
 const captionData = { 'caption': 'Machine learning for creators' };
 
-RunwayHTTP.query(8000, captionData);
+GIARunwayHTTP.query("192.168.2.44",8000, captionData);
 ```
 
 The `query` method returns a response from RunwayML:
@@ -43,7 +43,7 @@ The `query` method returns a response from RunwayML:
 // Query server and handle response using a Promise.
 const captionData = { 'caption': 'Machine learning for creators' };
 
-RunwayHTTP.query(8000, captionData)
+GIARunwayHTTP.query("192.168.2.44",8000, captionData)
     .then(res => console.log(res));
 ```
 
@@ -52,13 +52,13 @@ that correspond to RunwayML's routes:
 
 ```javascript
 // GET from /data route
-RunwayHTTP.getData(8000).then(res => console.log('data:', res));
+GIARunwayHTTP.getData("localhost",8001).then(res => console.log('data:', res));
 
 // GET from /info route
-RunwayHTTP.getInfo(8000).then(res => console.log('info:', res));
+GIARunwayHTTP.getInfo("192.168.2.44",8000).then(res => console.log('info:', res));
 
 // GET from /error route
-RunwayHTTP.getError(8000).then(res => console.log('error:', res));
+GIARunwayHTTP.getError("192.168.2.44",8000).then(res => console.log('error:', res));
 ```
 
 
@@ -71,3 +71,6 @@ This package has been implemented according to RunwayML's
 documentation.
 
 Author: [JP Yepez](https://www.instagram.com/jpyepez/)
+
+Forked: [GuillaumeAI](https://github.com/GuillaumeAI)
+
